@@ -57,7 +57,7 @@ steps:
    sudo docker build -t avinash15792/frontend-app:1.0.1 .
   displayName: "Build the container image"
   
-  - script: |
+- script: |
    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $DOCKER_HUB_USERNAME --password-stdin
    sudo docker push -f avinash15792/frontend-app:1.0.1
   displayName: "Login and push the image to docker hub"
