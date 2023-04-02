@@ -63,8 +63,8 @@ steps:
   displayName: "Login and push the image to docker hub"
   
 - task: KubernetesManifest@0
-    displayName: Deploy to Kubernetes cluster
-    inputs:
+  displayName: Deploy to Kubernetes cluster
+  inputs:
     kubernetesServiceConnection: gke-development
     action: deploy
     manifests: |
