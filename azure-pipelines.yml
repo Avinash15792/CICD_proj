@@ -62,4 +62,13 @@ steps:
    sudo docker push avinash15792/frontend-app:1.0.1
   displayName: "Login and push the image to docker hub"
   
+  - task: KubernetesManifest@0
+    displayName: Deploy to Kubernetes cluster
+    inputs:
+    kubernetesServiceConnection: gke-development
+    action: deploy
+    manifests: |
+    k8s/simple/frontend-deployment.yaml
+    k8s/simple/service-frontend-lb.yaml
+
   
